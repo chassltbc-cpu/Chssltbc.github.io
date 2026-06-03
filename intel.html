@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy 15th Birthday, Sophia!</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue-lightest: #eef6fd;
+    --blue-pale: #daeefa;
+    --blue-light: #b8ddf5;
+    --blue-soft: #7fbde0;
+    --blue-mid: #3b9cd9;
+    --blue-deep: #1a6fa8;
+    --blue-dark: #0d3d6b;
+    --blue-navy: #071e35;
+    --gold: #c9a84c;
+    --text-dark: #0a2540;
+    --text-mid: #2b5278;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--blue-lightest);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    background: radial-gradient(ellipse 90% 60% at 50% 0%, #9dcfee 0%, #daeefa 50%, var(--blue-lightest) 80%);
+    overflow: hidden;
+  }
+
+  /* Cinnamon Roll SVG cutout */
+  .cinnamon-roll {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    width: 90px;
+    height: 90px;
+    filter: drop-shadow(0 4px 14px rgba(74,159,212,0.25));
+    animation: floatBob 3s ease-in-out infinite;
+    z-index: 10;
+  }
+  @keyframes floatBob {
+    0%,100% { transform: translateY(0) rotate(-3deg); }
+    50% { transform: translateY(-10px) rotate(3deg); }
+  }
+
+  .star {
+    position: absolute;
+    border-radius: 50%;
+    background: white;
+    opacity: 0;
+    animation: twinkle ease-in-out infinite;
+    pointer-events: none;
+  }
+  @keyframes twinkle {
+    0%, 100% { opacity: 0; transform: scale(0.5); }
+    50% { opacity: 0.7; transform: scale(1); }
+  }
+
+  .bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.6), rgba(74,159,212,0.12));
+    border: 1px solid rgba(255,255,255,0.5);
+    animation: floatUp linear infinite;
+    pointer-events: none;
+  }
+  @keyframes floatUp {
+    0%   { transform: translateY(110vh) scale(0.8); opacity: 0; }
+    10%  { opacity: 0.9; }
+    90%  { opacity: 0.4; }
+    100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+  }
+
+  .hero-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--blue-mid);
+    margin-bottom: 1.5rem;
+    animation: fadeDown 1s ease both;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 11vw, 6rem);
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.05;
+    animation: fadeDown 1s 0.2s ease both;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--blue-mid);
+  }
+
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(2rem, 7vw, 3.2rem);
+    color: var(--gold);
+    margin-top: 0.4rem;
+    animation: fadeDown 1s 0.4s ease both;
+  }
+
+  .hero-divider {
+    width: 55px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--blue-mid), transparent);
+    margin: 1.6rem auto;
+    animation: fadeDown 1s 0.5s ease both;
+  }
+
+  .hero-date {
+    font-size: 0.82rem;
+    color: var(--text-mid);
+    letter-spacing: 0.06em;
+    animation: fadeDown 1s 0.6s ease both;
+  }
+
+  .scroll-btn {
+    margin-top: 2.5rem;
+    padding: 0.8rem 2.2rem;
+    border: 1.5px solid var(--blue-mid);
+    border-radius: 50px;
+    background: transparent;
+    color: var(--blue-deep);
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s;
+    animation: fadeDown 1s 0.8s ease both;
+    text-decoration: none;
+  }
+  .scroll-btn:hover {
+    background: var(--blue-mid);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(74,159,212,0.35);
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--blue-soft);
+    font-size: 0.62rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    animation: fadeIn 2s 1.5s ease both;
+  }
+  .scroll-hint span { animation: bounce 1.5s infinite; display: block; }
+  @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(5px)} }
+
+  /* ── SECTIONS SHARED ── */
+  .section-wrap {
+    padding: 5rem 1.5rem;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 0.63rem;
+    letter-spacing: 0.38em;
+    text-transform: uppercase;
+    color: var(--blue-mid);
+    margin-bottom: 0.6rem;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.7rem, 5vw, 2.6rem);
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+    line-height: 1.2;
+  }
+
+  /* ── LETTER ── */
+  .letter-card {
+    background: white;
+    border-radius: 18px;
+    padding: 2.8rem 2rem 2rem;
+    box-shadow: 0 4px 40px rgba(26,111,168,0.09);
+    position: relative;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.12rem;
+    line-height: 1.9;
+    color: #2a2a2a;
+    border-top: 4px solid var(--blue-soft);
+  }
+
+  .letter-card::before {
+    content: '\201C';
+    font-size: 7rem;
+    color: var(--blue-light);
+    font-family: 'Playfair Display', serif;
+    position: absolute;
+    top: -1.5rem;
+    left: 1.2rem;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .letter-card p { margin-bottom: 1.3rem; }
+  .letter-card p:last-child { margin-bottom: 0; }
+
+  .letter-sig {
+    margin-top: 1.8rem;
+    font-style: italic;
+    color: var(--blue-mid);
+    font-size: 1rem;
+  }
+
+  /* ── CANDLE SECTION ── */
+  #candle-section {
+    background: linear-gradient(180deg, var(--blue-lightest), #daeefa);
+  }
+
+  .candle-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 0 1rem;
+  }
+
+  .cake-scene {
+    position: relative;
+    width: 200px;
+    text-align: center;
+  }
+
+  .cake-emoji {
+    font-size: 5rem;
+    display: block;
+    filter: drop-shadow(0 8px 20px rgba(26,111,168,0.25));
+    transition: transform 0.3s;
+    user-select: none;
+  }
+
+  .candle-flame {
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.8rem;
+    animation: flicker 0.5s ease-in-out infinite alternate;
+    transition: opacity 0.4s;
+  }
+  @keyframes flicker {
+    from { transform: translateX(-50%) scaleY(1) rotate(-2deg); }
+    to   { transform: translateX(-50%) scaleY(1.12) rotate(2deg); }
+  }
+  .candle-flame.blown {
+    opacity: 0;
+    animation: none;
+  }
+
+  .smoke-puff {
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.4rem;
+    opacity: 0;
+    transition: opacity 0.4s 0.3s;
+    pointer-events: none;
+  }
+  .smoke-puff.show { opacity: 1; }
+
+  .blow-btn {
+    padding: 0.9rem 2.4rem;
+    border-radius: 50px;
+    border: none;
+    background: linear-gradient(135deg, var(--blue-mid), var(--blue-deep));
+    color: white;
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(26,111,168,0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .blow-btn:hover { transform: scale(1.04); box-shadow: 0 10px 28px rgba(26,111,168,0.4); }
+  .blow-btn:active { transform: scale(0.97); }
+
+  .candle-msg {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--text-mid);
+    min-height: 2rem;
+    transition: opacity 0.5s;
+    text-align: center;
+  }
+
+  /* ── COUNTDOWN ── */
+  .countdown-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.8rem;
+    margin-top: 1rem;
+  }
+
+  .countdown-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  .cd-block {
+    background: white;
+    border-radius: 16px;
+    padding: 1.2rem 0.5rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 24px rgba(26,111,168,0.10);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s;
+  }
+  .cd-block:hover { transform: translateY(-3px); }
+  .cd-block::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--blue-soft), var(--blue-mid));
+  }
+
+  .cd-num {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 7vw, 3rem);
+    font-weight: 700;
+    color: var(--blue-deep);
+    line-height: 1;
+    display: block;
+    transition: transform 0.15s ease;
+  }
+  .cd-num.tick {
+    animation: numTick 0.3s ease;
+  }
+  @keyframes numTick {
+    0% { transform: translateY(-8px); opacity: 0.4; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+
+  .cd-label {
+    font-size: 0.58rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text-mid);
+    margin-top: 0.35rem;
+    display: block;
+  }
+
+  .cd-status {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.08rem;
+    color: var(--text-mid);
+    text-align: center;
+    min-height: 1.5rem;
+  }
+
+  .cd-arrived {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--blue-deep);
+    text-align: center;
+    animation: fadeIn 1s ease;
+  }
+
+  /* ── REASONS ── */
+  .reasons-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8rem;
+    margin-top: 2rem;
+  }
+
+  .reason-card {
+    background: white;
+    border-radius: 14px;
+    padding: 1.4rem 1.1rem 1.2rem;
+    box-shadow: 0 2px 18px rgba(26,111,168,0.07);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+  .reason-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(26,111,168,0.15);
+  }
+  .reason-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 28px; height: 28px;
+    background: var(--blue-lightest);
+    border-radius: 50% 0 14px 0;
+  }
+  .reason-card::before {
+    content: '✦';
+    position: absolute;
+    top: 0.5rem; right: 0.8rem;
+    font-size: 0.75rem;
+    color: var(--blue-light);
+    pointer-events: none;
+  }
+
+  .reason-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem;
+    color: var(--blue-light);
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 0.45rem;
+  }
+
+  .reason-text {
+    font-size: 0.8rem;
+    color: var(--text-dark);
+    line-height: 1.55;
+  }
+
+  /* ── BIRTHDAY CALENDAR ── */
+  #calendar-section {
+    background: linear-gradient(180deg, #daeefa, var(--blue-lightest));
+  }
+
+  .calendar-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 40px rgba(26,111,168,0.12);
+    overflow: hidden;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .cal-header {
+    background: linear-gradient(135deg, var(--blue-mid), var(--blue-deep));
+    color: white;
+    padding: 1.4rem 1.5rem 1.2rem;
+    text-align: center;
+  }
+  .cal-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+  }
+  .cal-header p {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+
+  .cal-body {
+    padding: 1.2rem 1rem 1.5rem;
+  }
+
+  .cal-days-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  .cal-days-header span {
+    font-size: 0.62rem;
+    font-weight: 600;
+    color: var(--blue-mid);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.3rem 0;
+  }
+
+  .cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+    text-align: center;
+  }
+
+  .cal-day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.78rem;
+    border-radius: 50%;
+    color: var(--text-dark);
+    cursor: default;
+    transition: background 0.2s;
+  }
+  .cal-day.empty { color: transparent; pointer-events: none; }
+  .cal-day.other-month { color: var(--blue-light); }
+  .cal-day.birthday {
+    background: linear-gradient(135deg, var(--blue-mid), var(--blue-deep));
+    color: white;
+    font-weight: 700;
+    box-shadow: 0 4px 14px rgba(26,111,168,0.4);
+    position: relative;
+    animation: birthdayPulse 2s infinite;
+  }
+  @keyframes birthdayPulse {
+    0%,100% { box-shadow: 0 4px 14px rgba(26,111,168,0.4); }
+    50% { box-shadow: 0 4px 22px rgba(26,111,168,0.7), 0 0 0 4px rgba(74,159,212,0.2); }
+  }
+  .cal-day.today-mark {
+    border: 1.5px solid var(--blue-soft);
+    color: var(--blue-deep);
+    font-weight: 600;
+  }
+  .cal-day:not(.empty):not(.other-month):not(.birthday):hover {
+    background: var(--blue-lightest);
+  }
+
+  .cal-legend {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+    font-size: 0.68rem;
+    color: var(--text-mid);
+  }
+  .cal-legend span {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+  .legend-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .legend-dot.bday { background: linear-gradient(135deg, var(--blue-mid), var(--blue-deep)); }
+  .legend-dot.today { border: 1.5px solid var(--blue-soft); }
+
+  .cal-note {
+    text-align: center;
+    margin-top: 1.2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--blue-deep);
+    letter-spacing: 0.02em;
+  }
+
+  /* ── WISH UPON A STAR ── */
+  #wish-section {
+    background: linear-gradient(180deg, var(--blue-lightest), #b8ddf5 100%);
+  }
+
+  .wish-container {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 4px 40px rgba(26,111,168,0.10);
+    border-top: 4px solid var(--blue-soft);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .wish-container::before {
+    content: '⭐';
+    font-size: 6rem;
+    position: absolute;
+    top: -1.5rem;
+    right: 1rem;
+    opacity: 0.08;
+    pointer-events: none;
+  }
+
+  .wish-prompt {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text-mid);
+    margin-bottom: 1.2rem;
+    line-height: 1.7;
+  }
+
+  .wish-textarea {
+    width: 100%;
+    min-height: 120px;
+    border: 1.5px solid var(--blue-light);
+    border-radius: 12px;
+    padding: 1rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    color: var(--text-dark);
+    background: var(--blue-lightest);
+    resize: vertical;
+    outline: none;
+    transition: border-color 0.25s, box-shadow 0.25s;
+    line-height: 1.7;
+  }
+  .wish-textarea:focus {
+    border-color: var(--blue-mid);
+    box-shadow: 0 0 0 3px rgba(59,156,217,0.12);
+  }
+  .wish-textarea::placeholder {
+    color: var(--blue-soft);
+    font-style: italic;
+  }
+
+  .wish-actions {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .wish-save-btn {
+    padding: 0.75rem 1.8rem;
+    border-radius: 50px;
+    border: none;
+    background: linear-gradient(135deg, var(--blue-mid), var(--blue-deep));
+    color: white;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(26,111,168,0.28);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .wish-save-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(26,111,168,0.38); }
+
+  .wish-clear-btn {
+    padding: 0.75rem 1.2rem;
+    border-radius: 50px;
+    border: 1.5px solid var(--blue-light);
+    background: transparent;
+    color: var(--text-mid);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .wish-clear-btn:hover { border-color: var(--blue-mid); color: var(--blue-deep); }
+
+  .wish-saved-display {
+    margin-top: 1.5rem;
+    padding: 1.2rem 1rem;
+    background: linear-gradient(135deg, #eef6fd, #daeefa);
+    border-radius: 12px;
+    border-left: 3px solid var(--blue-mid);
+    display: none;
+  }
+  .wish-saved-display.show { display: block; }
+  .wish-saved-display p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.08rem;
+    color: var(--text-dark);
+    line-height: 1.75;
+  }
+  .wish-saved-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--blue-mid);
+    margin-bottom: 0.5rem;
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+  }
+  .star-shower {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+    overflow: hidden;
+  }
+  .star-shower-item {
+    position: absolute;
+    font-size: 1.2rem;
+    animation: starFall 2s ease-in forwards;
+  }
+  @keyframes starFall {
+    0% { opacity: 1; transform: translateY(-40px) rotate(0deg); }
+    100% { opacity: 0; transform: translateY(100vh) rotate(360deg); }
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 3rem 1rem 5rem;
+    background: linear-gradient(180deg, #b8ddf5 0%, #93c6e8 100%);
+  }
+  .footer-heart { font-size: 2.2rem; animation: pulse 1.5s infinite; display: block; }
+  @keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.18)} }
+  .footer-text {
+    margin-top: 0.8rem;
+    font-size: 0.73rem;
+    color: var(--blue-dark);
+    letter-spacing: 0.1em;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <!-- Cinnamoroll SVG cutout -->
+  <svg class="cinnamon-roll" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+    <!-- body -->
+    <ellipse cx="60" cy="72" rx="42" ry="38" fill="#eef6fd" stroke="#b8ddf5" stroke-width="1.5"/>
+    <!-- big fluffy head -->
+    <circle cx="60" cy="44" r="34" fill="white" stroke="#cce4f6" stroke-width="1.5"/>
+    <!-- ears -->
+    <ellipse cx="26" cy="24" rx="10" ry="14" fill="white" stroke="#cce4f6" stroke-width="1.5"/>
+    <ellipse cx="94" cy="24" rx="10" ry="14" fill="white" stroke="#cce4f6" stroke-width="1.5"/>
+    <!-- inner ears -->
+    <ellipse cx="26" cy="24" rx="6" ry="10" fill="#daeefa"/>
+    <ellipse cx="94" cy="24" rx="6" ry="10" fill="#daeefa"/>
+    <!-- blush -->
+    <ellipse cx="42" cy="52" rx="9" ry="6" fill="#7fbde0" opacity="0.35"/>
+    <ellipse cx="78" cy="52" rx="9" ry="6" fill="#7fbde0" opacity="0.35"/>
+    <!-- eyes -->
+    <circle cx="50" cy="44" r="5.5" fill="#0a2540"/>
+    <circle cx="70" cy="44" r="5.5" fill="#0a2540"/>
+    <circle cx="52" cy="42" r="1.8" fill="white"/>
+    <circle cx="72" cy="42" r="1.8" fill="white"/>
+    <!-- nose -->
+    <ellipse cx="60" cy="50" rx="3" ry="2" fill="#4a9fd4" opacity="0.6"/>
+    <!-- smile -->
+    <path d="M 53 55 Q 60 61 67 55" stroke="#4a9fd4" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <!-- tail curl on body -->
+    <path d="M 95 85 Q 110 72 102 60" stroke="#cce4f6" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <!-- little star accent -->
+    <text x="8" y="18" font-size="12" fill="#c9a84c">✦</text>
+  </svg>
+
+  <p class="hero-label">A Celebration For</p>
+  <h1 class="hero-title">Happy <em>15th</em><br>Birthday</h1>
+  <p class="hero-name">Sophia! ✨</p>
+  <div class="hero-divider"></div>
+    <p class="hero-date">June 11, 2026 &nbsp;·&nbsp; The journey is still long, Phia!!</p>
+  <a href="#letter" class="scroll-btn">💌 &nbsp; Read Your Letter</a>
+  <div class="scroll-hint">SCROLL <span>↓</span></div>
+</section>
+
+<!-- ── LETTER ── -->
+<section id="letter">
+  <div class="section-wrap">
+    <p class="section-label">A Letter For You</p>
+    <h2 class="section-title">From the deepest of my heart 😄😜💙</h2>
+    <div class="letter-card reveal">
+      <p>My dearest Sophia,</p>
+      <p>Happy 15th birthday, bestie!! 🎉 Can you even believe we've made it this far together? Because I honestly still can't. You've grown into someone so incredibly amazing, and I feel so lucky every single day that I get to call you my friend.</p>
+      <p>I've watched you face things that would have made most people give up — and you didn't. Not once. You kept pushing, kept smiling (even when it was hard), and kept being the most wonderfully you person I know. That takes a kind of strength not everyone has, Pyang, and you have it in abundance!!</p>
+      <p>Thank you for being the friend who shows up. The one who listens without judgment, who laughs with me at the dumbest things, and who makes even the most ordinary days feel like something worth remembering. You have no idea how much you mean to me!! 🥺💙</p>
+      <p>15 is just the beginning, Phia!! The world has so many beautiful things waiting for you — adventures, achievements, and moments that will take your breath away. And I'll be right there cheering you on through every single one of them!!</p>
+      <p>Happiest of birthdays, Sophia!! May this year be your most magical yet. May life give you everything you deserve — and you deserve only the very best!! I love you so, so much!! 🎂🎈</p>
+      <p class="letter-sig">— forever your bestie, Chassel 💙</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── CANDLE ── -->
+<section id="candle-section">
+  <div class="section-wrap" style="text-align:center;">
+    <p class="section-label">Make a Wish</p>
+    <h2 class="section-title">Blow out your candle, Pyang!! 🕯️</h2>
+    <div class="candle-wrap reveal">
+      <div class="cake-scene">
+        <div class="candle-flame" id="flame">🔥</div>
+        <div class="smoke-puff" id="smoke">💨</div>
+        <span class="cake-emoji" id="cakeEmoji">🎂</span>
+      </div>
+      <button class="blow-btn" id="blowBtn" onclick="blowCandle()">💨 Blow the Candle!</button>
+      <p class="candle-msg" id="candleMsg">Close your eyes and make a wish, Sophia...</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── COUNTDOWN ── -->
+<section id="countdown">
+  <div class="section-wrap">
+    <p class="section-label">Counting Down</p>
+    <h2 class="section-title">Until your special day, Phia!! 🎂✨</h2>
+    <div class="countdown-wrap reveal">
+      <div class="countdown-grid">
+        <div class="cd-block">
+          <span class="cd-num" id="cd-days">--</span>
+          <span class="cd-label">Days</span>
+        </div>
+        <div class="cd-block">
+          <span class="cd-num" id="cd-hours">--</span>
+          <span class="cd-label">Hours</span>
+        </div>
+        <div class="cd-block">
+          <span class="cd-num" id="cd-minutes">--</span>
+          <span class="cd-label">Minutes</span>
+        </div>
+        <div class="cd-block">
+          <span class="cd-num" id="cd-seconds">--</span>
+          <span class="cd-label">Seconds</span>
+        </div>
+      </div>
+      <p class="cd-status" id="cd-status">Every second is one second closer, Sophia 💙</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── REASONS ── -->
+<section id="reasons">
+  <div class="section-wrap">
+    <p class="section-label">Because</p>
+    <h2 class="section-title">15 reasons I love you 💛</h2>
+    <div class="reasons-grid" id="reasonsGrid"></div>
+  </div>
+</section>
+
+<!-- ── BIRTHDAY CALENDAR ── -->
+<section id="calendar-section">
+  <div class="section-wrap">
+    <p class="section-label">Mark the Date</p>
+    <h2 class="section-title">Your special day 📅✨</h2>
+    <div class="calendar-card reveal">
+      <div class="cal-header">
+        <h3>June 2026</h3>
+        <p>🎂 Sophia's 15th Birthday</p>
+      </div>
+      <div class="cal-body">
+        <div class="cal-days-header">
+          <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
+        </div>
+        <div class="cal-grid" id="calGrid"></div>
+        <div class="cal-legend">
+          <span><div class="legend-dot bday"></div> Birthday (Jun 11)</span>
+          <span><div class="legend-dot today" style="width:10px;height:10px;border-radius:50%;border:1.5px solid #7fbde0;"></div> Today</span>
+        </div>
+      </div>
+    </div>
+    <p class="cal-note reveal" style="margin-top:1.5rem;">June 11 — the day the world got a little brighter, Sophia ✨</p>
+  </div>
+</section>
+
+<!-- ── WISH UPON A STAR ── -->
+<section id="wish-section">
+  <div class="section-wrap">
+    <p class="section-label">Wish Upon a Star</p>
+    <h2 class="section-title">Write your birthday wish, Phia ⭐</h2>
+    <div class="wish-container reveal">
+      <p class="wish-prompt">Close your eyes, take a deep breath... and when you're ready, write whatever is in your heart. The stars are listening, Sophia! 🌟</p>
+      <textarea class="wish-textarea" id="wishInput" placeholder="I wish for..."></textarea>
+      <div class="wish-actions">
+        <button class="wish-save-btn" onclick="saveWish()">⭐ Send to the Stars</button>
+        <button class="wish-clear-btn" onclick="clearWish()">Clear</button>
+      </div>
+      <div class="wish-saved-display" id="wishDisplay">
+        <p class="wish-saved-label">Your Wish ✦</p>
+        <p id="wishText"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <span class="footer-heart">💙</span>
+  <p class="footer-text">Happy 15th Birthday, Sophia &nbsp;·&nbsp; Made with love by Chassel, just for you</p>
+</footer>
+
+<div class="star-shower" id="starShower"></div>
+
+<script>
+// ── Bubbles & Stars in hero ──
+const hero = document.getElementById('hero');
+for (let i = 0; i < 20; i++) {
+  const b = document.createElement('div');
+  b.className = 'bubble';
+  const size = Math.random() * 65 + 12;
+  b.style.cssText = `width:${size}px;height:${size}px;left:${Math.random()*100}%;animation-duration:${Math.random()*13+7}s;animation-delay:${Math.random()*12}s;`;
+  hero.appendChild(b);
+}
+for (let i = 0; i < 30; i++) {
+  const s = document.createElement('div');
+  s.className = 'star';
+  const size = Math.random() * 4 + 1;
+  s.style.cssText = `width:${size}px;height:${size}px;top:${Math.random()*100}%;left:${Math.random()*100}%;animation-duration:${Math.random()*3+1.5}s;animation-delay:${Math.random()*4}s;`;
+  hero.appendChild(s);
+}
+
+// ── Candle blow ──
+let blown = false;
+function blowCandle() {
+  if (blown) {
+    // re-light
+    blown = false;
+    document.getElementById('flame').classList.remove('blown');
+    document.getElementById('smoke').classList.remove('show');
+    document.getElementById('blowBtn').textContent = '💨 Blow the Candle!';
+    document.getElementById('candleMsg').textContent = 'Close your eyes and make a wish, Sophia...';
+    return;
+  }
+  blown = true;
+  document.getElementById('flame').classList.add('blown');
+  document.getElementById('smoke').classList.add('show');
+  document.getElementById('blowBtn').textContent = '🕯️ Re-light the Candle';
+  document.getElementById('candleMsg').textContent = 'Your wish has been sent to the universe, Phia!! 🌙💫';
+  // confetti burst
+  shootStars();
+}
+
+// ── Calendar ──
+function buildCalendar() {
+  const grid = document.getElementById('calGrid');
+  const year = 2026, month = 5; // June is month index 5
+  const today = new Date();
+  const firstDay = new Date(year, month, 1).getDay(); // 0=Sun
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  const birthdayDay = 11;
+  const todayDay = (today.getFullYear() === year && today.getMonth() === month) ? today.getDate() : null;
+
+  // empty cells before first day
+  for (let i = 0; i < firstDay; i++) {
+    const d = document.createElement('div');
+    d.className = 'cal-day empty';
+    grid.appendChild(d);
+  }
+  for (let d = 1; d <= daysInMonth; d++) {
+    const cell = document.createElement('div');
+    let cls = 'cal-day';
+    if (d === birthdayDay) cls += ' birthday';
+    else if (d === todayDay) cls += ' today-mark';
+    cell.className = cls;
+    cell.textContent = d;
+    if (d === birthdayDay) cell.title = "🎂 Sophia's Birthday!";
+    grid.appendChild(cell);
+  }
+}
+buildCalendar();
+
+// ── Reasons ──
+const reasons = [
+  { num: '01', text: "Your smile — it's the kind that makes everyone around you feel instantly at ease 😊" },
+  { num: '02', text: "The way you love deeply and without conditions — you give so much of yourself to people you care about!!" },
+  { num: '03', text: "Your strength when everything feels heavy — you face it all with a grace that honestly amazes me!!" },
+  { num: '04', text: "How you always notice the little things — the details no one else picks up on 🌙" },
+  { num: '05', text: "You show up!! Even when it's hard, even when you're tired — you always show up for the ones you love!!" },
+  { num: '06', text: "Your laugh — it's genuinely contagious and it makes any bad day better 😂💙" },
+  { num: '07', text: "Your kindness to animals — your heart is just too big and too beautiful 🐾" },
+  { num: '08', text: "How you make me feel so saur saur valued and loved just by being my friend!!" },
+  { num: '09', text: "Your passion!! When you care about something, you go all in — and it is so admirable!!" },
+  { num: '10', text: "How you believe in me even on the days I don't believe in myself — that means everything!!!" },
+  { num: '11', text: "Your beauty — inside and out, sincerely. You don't even see how stunning you are!! 😍" },
+  { num: '12', text: "The way ordinary days become core memories when I'm with you, Phia 🌸" },
+  { num: '13', text: "Your resilience — you've been through things that would have broken most people and you're still here, still shining!!" },
+  { num: '14', text: "How you make the people around you feel like the most important person in the room 🥺" },
+  { num: '15', text: "Simply because you exist in my world — and that alone makes everything so much better!! 💙✨" },
+];
+
+const grid = document.getElementById('reasonsGrid');
+reasons.forEach((r, i) => {
+  const card = document.createElement('div');
+  card.className = 'reason-card reveal';
+  card.style.transitionDelay = `${(i % 2) * 0.1}s`;
+  card.innerHTML = `<div class="reason-num">${r.num}</div><p class="reason-text">${r.text}</p>`;
+  grid.appendChild(card);
+});
+
+// ── Wish section ──
+function saveWish() {
+  const val = document.getElementById('wishInput').value.trim();
+  if (!val) return;
+  document.getElementById('wishText').textContent = val;
+  document.getElementById('wishDisplay').classList.add('show');
+  shootStars();
+}
+function clearWish() {
+  document.getElementById('wishInput').value = '';
+  document.getElementById('wishDisplay').classList.remove('show');
+  document.getElementById('wishText').textContent = '';
+}
+
+// ── Star shower ──
+function shootStars() {
+  const shower = document.getElementById('starShower');
+  const emojis = ['⭐','🌟','💫','✨','🌙','💙'];
+  for (let i = 0; i < 24; i++) {
+    const el = document.createElement('div');
+    el.className = 'star-shower-item';
+    el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    el.style.left = Math.random() * 100 + 'vw';
+    el.style.animationDelay = (Math.random() * 1.2) + 's';
+    el.style.fontSize = (0.8 + Math.random() * 1.2) + 'rem';
+    shower.appendChild(el);
+    setTimeout(() => el.remove(), 3000);
+  }
+}
+
+// ── Countdown ──
+function updateCountdown() {
+  const birthday = new Date('2026-06-11T00:00:00');
+  const now = new Date();
+  const diff = birthday - now;
+
+  if (diff <= 0) {
+    document.querySelector('.countdown-grid').innerHTML = '<p class="cd-arrived">🎉 IT\'S YOUR BIRTHDAY, SOPHIA!! 🎉</p>';
+    document.getElementById('cd-status').textContent = 'Happy 15th Birthday, Phia!! The day is finally here!! 💙🎂';
+    shootStars();
+    return;
+  }
+
+  const days    = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours   = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+  function setVal(id, val) {
+    const el = document.getElementById(id);
+    const padded = String(val).padStart(2, '0');
+    if (el.textContent !== padded) {
+      el.textContent = padded;
+      el.classList.remove('tick');
+      void el.offsetWidth;
+      el.classList.add('tick');
+    }
+  }
+
+  setVal('cd-days', days);
+  setVal('cd-hours', hours);
+  setVal('cd-minutes', minutes);
+  setVal('cd-seconds', seconds);
+
+  const statusEl = document.getElementById('cd-status');
+  if (days === 0 && hours === 0 && minutes < 10) {
+    statusEl.textContent = 'Almost there, Sophia!!! Any minute now!! 🎉💙';
+  } else if (days === 0) {
+    statusEl.textContent = "It's TODAY, Phia!! Happy Birthday!! 🎂✨";
+  } else if (days <= 3) {
+    statusEl.textContent = `Only ${days} day${days===1?'':'s'} left, Pyang!! The excitement is real!! 🎉`;
+  } else {
+    statusEl.textContent = 'Every second is one second closer, Sophia 💙';
+  }
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// ── Scroll reveal ──
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
